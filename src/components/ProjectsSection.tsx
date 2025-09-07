@@ -6,32 +6,32 @@ import realestateProject from "@/assets/RB.png";
 
 const ProjectsSection = () => {
   const projects = [
-   {
-  title: "Ezlogic MIOS Smart Home Platform",
-  description:
-    "A next-generation smart home automation platform enabling users to build, customize, and control their smart homes effortlessly. The platform focuses on seamless device integration, intuitive user experience, and scalable architecture.",
-  image: ezlogicproject, // replace with actual image variable
-  technologies: [
-    "React.js",
-    "Next.js",
-    "TypeScript",
-    "Redux Toolkit",
-    "Tailwind CSS",
-    "Node.js"
-  ],
-  features: [
-    "Developed and enhanced core front-end modules for smart home automation",
-    "Integrated complex device management and policy-based automation",
-    "Improved performance and user experience across multiple devices",
-    "Contributed to scalable architecture supporting thousands of users",
-    "Led feature implementations and collaborated with cross-functional teams"
-  ],
-  liveUrl: "https://ezlogic.mios.com", 
-  githubUrl: null, // likely private, so keep null or remove
-  duration: "3+ years (Ongoing Product)",
-  teamSize: "7–8 developers",
-  role: "Senior Front-End Developer"
-},
+    {
+      title: "Ezlogic MIOS Smart Home Platform",
+      description:
+        "A next-generation smart home automation platform enabling users to build, customize, and control their smart homes effortlessly. The platform focuses on seamless device integration, intuitive user experience, and scalable architecture.",
+      image: ezlogicproject,
+      technologies: [
+        "React.js",
+        "Next.js",
+        "TypeScript",
+        "Redux Toolkit",
+        "Tailwind CSS",
+        "Node.js",
+      ],
+      features: [
+        "Developed and enhanced core front-end modules for smart home automation",
+        "Integrated complex device management and policy-based automation",
+        "Improved performance and user experience across multiple devices",
+        "Contributed to scalable architecture supporting thousands of users",
+        "Led feature implementations and collaborated with cross-functional teams",
+      ],
+      liveUrl: "https://ezlogic.mios.com",
+      githubUrl: null, 
+      duration: "3+ years (Ongoing Product)",
+      teamSize: "7–8 developers",
+      role: "Senior Front-End Developer",
+    },
 
     {
       title: "Technical Recruiting & HR Outsourcing Website",
@@ -211,23 +211,26 @@ const ProjectsSection = () => {
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-3 lg:gap-4">
+                  <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 w-full">
                     <Button
                       onClick={() => window.open(project.liveUrl, "_blank")}
-                      className="flex-1 sm:flex-none"
+                      className="w-full sm:w-auto px-4 py-3" // <-- full width on mobile, auto on larger screens
                       size="lg"
                     >
-                      <ExternalLink className="w-4 h-4 mr-2" />
+                      <ExternalLink className="w-5 h-5 mr-2" />{" "}
+                      {/* slightly bigger icon */}
                       View Project
                     </Button>
+
+                    {/* Uncomment if you need second button */}
                     {/* <Button
-                      variant="outline"
-                      onClick={() => window.open(project.githubUrl, '_blank')}
-                      className="flex-1 sm:flex-none"
-                      size="lg"
-                    >
-                      <Github className="w-4 h-4 mr-2" />
-                      Source Code
+                     variant="outline"
+                     onClick={() => window.open(project.githubUrl, "_blank")}
+                     className="w-full sm:w-auto px-4 py-3"
+                     size="lg"
+                       >
+                         <Github className="w-5 h-5 mr-2" />
+                         Source Code
                     </Button> */}
                   </div>
                 </div>

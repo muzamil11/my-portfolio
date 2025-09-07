@@ -12,7 +12,7 @@ const Navigation = () => {
     { name: "Experience", href: "#experience" },
     { name: "Projects", href: "#projects" },
     { name: "Education", href: "#education" },
-    { name: "Contact", href: "#contact" }
+    { name: "Contact", href: "#contact" },
   ];
 
   useEffect(() => {
@@ -20,31 +20,36 @@ const Navigation = () => {
       setIsScrolled(window.scrollY > 50);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
-    element?.scrollIntoView({ behavior: 'smooth' });
+    element?.scrollIntoView({ behavior: "smooth" });
     setIsMobileMenuOpen(false);
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-      isScrolled 
-        ? 'bg-background/90 dark:bg-background/90 backdrop-blur-md shadow-xl border-b border-border/20' 
-        : 'bg-transparent'
-    }`}>
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled
+          ? "bg-background/90 dark:bg-background/90 backdrop-blur-md shadow-xl border-b border-border/20"
+          : "bg-transparent"
+      }`}
+    >
       <div className="container-padding">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
+          {/* {isMobileMenuOpen && ( */}
           <div className="flex items-center">
             <button
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               className={`text-2xl font-bold transition-all duration-300 ${
-                isScrolled ? 'text-gradient hover:scale-105' : 'text-white dark:text-white hover:text-white/80 hover:scale-105'
-              }`}
+                isScrolled
+                  ? "text-gradient hover:scale-105"
+                  : "text-white dark:text-white hover:text-white/80 hover:scale-105"
+              } lg:block hidden`} // <-- add this
             >
               Muzamil Ali
             </button>
@@ -57,15 +62,17 @@ const Navigation = () => {
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
                 className={`font-semibold transition-all duration-300 relative group px-4 py-2 rounded-xl ${
-                  isScrolled 
-                    ? 'text-foreground/80 hover:text-primary hover:bg-primary/5 dark:text-foreground/80 dark:hover:text-primary' 
-                    : 'text-white/90 hover:text-white hover:bg-white/10'
+                  isScrolled
+                    ? "text-foreground/80 hover:text-primary hover:bg-primary/5 dark:text-foreground/80 dark:hover:text-primary"
+                    : "text-white/90 hover:text-white hover:bg-white/10"
                 }`}
               >
                 {item.name}
-                <span className={`absolute bottom-0 left-4 right-4 h-0.5 rounded-full transition-all duration-300 transform scale-x-0 group-hover:scale-x-100 ${
-                  isScrolled ? 'bg-primary' : 'bg-white'
-                }`}></span>
+                <span
+                  className={`absolute bottom-0 left-4 right-4 h-0.5 rounded-full transition-all duration-300 transform scale-x-0 group-hover:scale-x-100 ${
+                    isScrolled ? "bg-primary" : "bg-white"
+                  }`}
+                ></span>
               </button>
             ))}
           </div>
@@ -74,12 +81,16 @@ const Navigation = () => {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className={`lg:hidden p-3 rounded-xl transition-all duration-300 ${
-              isScrolled 
-                ? 'text-foreground/80 hover:bg-accent/50 dark:text-foreground/80 dark:hover:bg-accent/50' 
-                : 'text-white hover:bg-white/10 backdrop-blur-sm'
+              isScrolled
+                ? "text-foreground/80 hover:bg-accent/50 dark:text-foreground/80 dark:hover:bg-accent/50"
+                : "text-white hover:bg-white/10 backdrop-blur-sm"
             }`}
           >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
           </button>
         </div>
 
