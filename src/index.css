@@ -1,0 +1,415 @@
+/* Modern fonts loaded via HTML link tags for better performance */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Muzamil Ali Portfolio Design System
+All colors MUST be HSL for consistent theming.
+Professional, modern, and approachable design.
+*/
+
+@layer base {
+  :root {
+    /* Modern Background & Surface Colors */
+    --background: 0 0% 100%;
+    --foreground: 220 15% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 20%;
+
+    /* Modern Professional Palette - Deep Blue/Emerald */
+    --primary: 210 100% 48%;
+    --primary-foreground: 0 0% 100%;
+    --primary-muted: 210 100% 97%;
+    --primary-dark: 210 85% 35%;
+    --primary-light: 210 100% 65%;
+
+    /* Gradient Colors - Professional Blue to Emerald */
+    --gradient-from: 210 100% 48%;
+    --gradient-via: 195 85% 45%;
+    --gradient-to: 160 85% 42%;
+
+    /* Secondary & Accent Colors */
+    --secondary: 210 20% 95%;
+    --secondary-foreground: 220 15% 20%;
+    --accent: 160 85% 42%;
+    --accent-foreground: 0 0% 100%;
+    --muted: 210 20% 95%;
+    --muted-foreground: 220 10% 45%;
+
+    /* Modern Grays with better contrast */
+    --gray-50: 210 15% 99%;
+    --gray-100: 210 15% 97%;
+    --gray-200: 210 15% 94%;
+    --gray-300: 210 12% 87%;
+    --gray-400: 215 16% 65%;
+    --gray-500: 215 20% 50%;
+    --gray-600: 215 25% 35%;
+    --gray-700: 215 30% 25%;
+    --gray-800: 215 35% 15%;
+    --gray-900: 215 40% 8%;
+
+    /* Enhanced Status Colors */
+    --success: 160 85% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 35 100% 55%;
+    --warning-foreground: 0 0% 100%;
+    --destructive: 0 85% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Modern Border & Input */
+    --border: 210 15% 92%;
+    --input: 210 15% 97%;
+    --ring: 250 100% 65%;
+    --radius: 1rem;
+
+    /* Modern Portfolio Effects */
+    --hero-gradient: linear-gradient(
+      135deg,
+      hsl(var(--gradient-from)) 0%,
+      hsl(var(--gradient-via)) 50%,
+      hsl(var(--gradient-to)) 100%
+    );
+    --card-gradient: linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(255, 255, 255, 0.7) 100%
+    );
+    --glass-bg: rgba(255, 255, 255, 0.25);
+    --glass-border: rgba(255, 255, 255, 0.18);
+
+    /* Advanced Shadows */
+    --shadow-sm: 0 2px 4px -1px rgba(0, 0, 0, 0.06),
+      0 1px 2px -1px rgba(0, 0, 0, 0.06);
+    --shadow-base: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    --shadow-glow: 0 0 30px rgba(250, 100%, 65%, 0.3);
+    --shadow-colored: 0 10px 25px -5px rgba(250, 100%, 65%, 0.2),
+      0 4px 6px -2px rgba(250, 100%, 65%, 0.1);
+
+    /* Skill Bar Modern Colors */
+    --skill-bar-bg: hsl(210 15% 94%);
+    --skill-bar-fill: linear-gradient(
+      90deg,
+      hsl(var(--gradient-from)),
+      hsl(var(--gradient-via))
+    );
+
+    /* Modern Animation Variables */
+    --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-fast: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --backdrop-blur: blur(12px);
+  }
+
+  .dark {
+    /* Dark Theme - Rich, Modern Backgrounds */
+    --background: 220 25% 6%;
+    --foreground: 210 15% 95%;
+    --card: 220 23% 9%;
+    --card-foreground: 210 15% 95%;
+    --popover: 220 23% 9%;
+    --popover-foreground: 210 15% 95%;
+
+    /* Enhanced Primary Colors for Dark */
+    --primary: 200 100% 60%;
+    --primary-foreground: 220 25% 6%;
+    --primary-muted: 200 30% 15%;
+    --primary-dark: 200 85% 50%;
+    --primary-light: 200 100% 75%;
+
+    /* Dark Theme Gradient Colors */
+    --gradient-from: 210 100% 55%;
+    --gradient-via: 195 85% 50%;
+    --gradient-to: 160 85% 48%;
+
+    /* Dark Secondary & Accent */
+    --secondary: 220 25% 12%;
+    --secondary-foreground: 210 15% 95%;
+    --accent: 160 85% 48%;
+    --accent-foreground: 220 25% 6%;
+    --muted: 220 25% 12%;
+    --muted-foreground: 220 10% 65%;
+
+    /* Dark Theme Grays */
+    --gray-50: 220 25% 6%;
+    --gray-100: 220 23% 9%;
+    --gray-200: 220 20% 14%;
+    --gray-300: 220 18% 20%;
+    --gray-400: 215 15% 35%;
+    --gray-500: 215 15% 50%;
+    --gray-600: 215 15% 65%;
+    --gray-700: 215 15% 75%;
+    --gray-800: 215 15% 85%;
+    --gray-900: 210 15% 95%;
+
+    /* Enhanced Status Colors for Dark */
+    --success: 160 85% 55%;
+    --success-foreground: 220 25% 6%;
+    --warning: 35 100% 65%;
+    --warning-foreground: 220 25% 6%;
+    --destructive: 0 85% 65%;
+    --destructive-foreground: 220 25% 6%;
+
+    /* Dark Border & Input */
+    --border: 220 20% 18%;
+    --input: 220 20% 14%;
+    --ring: 250 100% 68%;
+
+    /* Dark Theme Effects */
+    --hero-gradient: linear-gradient(
+      135deg,
+      hsl(var(--gradient-from)) 0%,
+      hsl(var(--gradient-via)) 50%,
+      hsl(var(--gradient-to)) 100%
+    );
+    --card-gradient: linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.08) 0%,
+      rgba(255, 255, 255, 0.03) 100%
+    );
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --skill-bar-bg: hsl(220 20% 18%);
+    --skill-bar-fill: linear-gradient(
+      90deg,
+      hsl(var(--gradient-from)),
+      hsl(var(--gradient-via))
+    );
+
+    /* Dark Theme Shadows */
+    --shadow-sm: 0 2px 4px -1px rgba(0, 0, 0, 0.3),
+      0 1px 2px -1px rgba(0, 0, 0, 0.3);
+    --shadow-base: 0 4px 6px -1px rgba(0, 0, 0, 0.4),
+      0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5),
+      0 4px 6px -2px rgba(0, 0, 0, 0.3);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6),
+      0 10px 10px -5px rgba(0, 0, 0, 0.2);
+    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+    --shadow-glow: 0 0 30px rgba(250, 100%, 68%, 0.4);
+    --shadow-colored: 0 10px 25px -5px rgba(250, 100%, 68%, 0.3),
+      0 4px 6px -2px rgba(250, 100%, 68%, 0.2);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  /* Modern Portfolio Card Component */
+  .portfolio-card {
+    @apply bg-card/80 backdrop-blur-sm rounded-2xl p-8 border border-white/20;
+    background: var(--card-gradient);
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .portfolio-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent
+    );
+  }
+
+  .portfolio-card:hover {
+    box-shadow: var(--shadow-colored);
+    @apply transform -translate-y-2 scale-[1.02];
+  }
+
+  .dark .portfolio-card:hover {
+    background: linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.12) 0%,
+      rgba(255, 255, 255, 0.06) 100%
+    );
+  }
+
+  /* Glassmorphism Card */
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: var(--backdrop-blur);
+    border: 1px solid var(--glass-border);
+    @apply rounded-2xl p-6;
+    box-shadow: var(--shadow-xl);
+  }
+
+  /* Hero Gradient Background with Mesh */
+  .hero-gradient {
+    background: var(--hero-gradient);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-gradient::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+        circle at 20% 20%,
+        rgba(255, 255, 255, 0.1) 0%,
+        transparent 70%
+      ),
+      radial-gradient(
+        circle at 80% 80%,
+        rgba(255, 255, 255, 0.1) 0%,
+        transparent 70%
+      ),
+      radial-gradient(
+        circle at 40% 60%,
+        rgba(255, 255, 255, 0.05) 0%,
+        transparent 70%
+      );
+  }
+
+  /* Modern Skill Bar Component */
+  .skill-bar {
+    @apply w-full h-3 rounded-full overflow-hidden relative;
+    background: var(--skill-bar-bg);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .skill-bar-fill {
+    @apply h-full rounded-full transition-all duration-1000 ease-out relative;
+    background: var(--skill-bar-fill);
+    box-shadow: 0 0 15px rgba(250, 100%, 65%, 0.4);
+  }
+
+  .skill-bar-fill::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    );
+    animation: shimmer 2s infinite;
+  }
+
+  /* Enhanced Text Gradient */
+.text-gradient {
+  background: linear-gradient(135deg, #2563eb, #06b6d4); /* blue → cyan */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  font-weight: 700;
+}
+
+
+  /* Smooth Scroll */
+  .smooth-scroll {
+    scroll-behavior: smooth;
+  }
+
+  /* Enhanced Interactive Link */
+  .interactive-link {
+    @apply relative inline-block;
+    transition: var(--transition-bounce);
+    background: linear-gradient(
+      135deg,
+      hsl(var(--primary)),
+      hsl(var(--accent))
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .interactive-link::after {
+    @apply absolute bottom-0 left-0 w-0 h-0.5 rounded-full;
+    content: "";
+    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)));
+    transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 0 10px rgba(250, 100%, 65%, 0.5);
+  }
+
+  .interactive-link:hover::after {
+    @apply w-full;
+  }
+
+  .interactive-link:hover {
+    @apply transform -translate-y-0.5;
+  }
+
+  /* Modern Button Effects */
+  .btn-glow {
+    box-shadow: var(--shadow-glow);
+    transition: var(--transition-smooth);
+  }
+
+  .btn-glow:hover {
+    box-shadow: 0 0 40px rgba(250, 100%, 65%, 0.5);
+    @apply transform -translate-y-1;
+  }
+
+  /* Section spacing */
+  .section-padding {
+    @apply py-20 lg:py-32;
+  }
+
+  .container-padding {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Floating Elements */
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .float-animation:nth-child(2) {
+    animation-delay: -2s;
+  }
+
+  .float-animation:nth-child(3) {
+    animation-delay: -4s;
+  }
+
+  /* Modern Scroll Indicator */
+  .scroll-indicator {
+    @apply relative;
+  }
+
+  .scroll-indicator::after {
+    content: "";
+    @apply absolute top-full left-1/2 transform -translate-x-1/2 w-px h-16 mt-4;
+    background: linear-gradient(to bottom, hsl(var(--primary)), transparent);
+    animation: scroll-pulse 2s ease-in-out infinite;
+  }
+}
